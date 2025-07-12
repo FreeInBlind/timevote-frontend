@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Voting Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>📋 Voting History</h2>
+  <ul id="eventList"></ul>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', async () => {
+      const res = await fetch('http://localhost:3000/api/events');
+      const events = await res.json();
+
+      const list = document.getElementById('eventList');
+      if (events.length === 0) {
+        list.innerHTML = '<li>No events found.</li>';
+        return;
+      }
+
+      events.forEach(e => {
+        const item = document.createElement('li');
+        item.innerHTML = `
+          <b>${e.title}</b> - ${e.description}<br>
+          <a href="result.html?id=${e._id}">📊 View Results</a>
+        `;
+        list.appendChild(item);
+      });
+    });
+  </script>
+</body>
+</html>

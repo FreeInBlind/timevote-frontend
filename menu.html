@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Welcome, <span id="usernameDisplay"></span>!</h2>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; max-width: 300px;">
+    <button onclick="location.href='create.html'">📝 Create Event</button>
+    <button onclick="location.href='vote.html'">🗳 Vote</button>
+    <button onclick="location.href='result.html'">📊 View Results</button>
+    <button onclick="location.href='history.html'">📜 View History</button>
+  </div>
+
+  <script>
+    const name = localStorage.getItem('username');
+    document.getElementById('usernameDisplay').textContent = name || 'User';
+  </script>
+</body>
+</html>

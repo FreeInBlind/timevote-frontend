@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TimeVote - User Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Welcome to TimeVote</h1>
+
+  <form id="registerForm">
+    <label>Enter your name:</label><br>
+    <input type="text" id="username" placeholder="e.g. Alice" required><br>
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    document.getElementById('registerForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      localStorage.setItem('username', username);
+      window.location.href = 'menu.html'; // ✅ 自动跳转
+    });
+  </script>
+</body>
+</html>

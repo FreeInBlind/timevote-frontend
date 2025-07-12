@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Event</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Create New Event</h2>
+  <form id="createEventForm">
+    <input type="text" placeholder="Event Title" id="eventTitle" required><br>
+    <textarea placeholder="Description" id="eventDesc"></textarea><br>
+    <label>Time Slots (comma separated):</label><br>
+    <input type="text" id="timeSlots" placeholder="e.g. 10am, 2pm, 4pm" required><br>
+
+    <!-- ✅ 新增 -->
+    <label>Max Votes Per User:</label><br>
+    <input type="number" id="maxVotes" value="3" min="1" required><br>
+
+    <button type="submit">Create Event</button>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* 全局字体和背景 */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  background: #eef6fb;
+  color: #2c3e50;
+}
+
+/* 标题统一样式 */
+h1, h2, h3 {
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+/* 卡片式表单容器 */
+form {
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* 表单字段统一样式 */
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+textarea,
+button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* 勾选框样式 */
+label {
+  display: block;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+/* 按钮美化 */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #2980b9;
+  cursor: pointer;
+}
+
+/* 投票表单区域 */
+#voteForm {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 响应式图表 canvas */
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 投票记录区域 */
+#voterRecords {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
