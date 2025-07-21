@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Voting Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>📋 Voting History</h2>
+  <ul id="eventList"></ul>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', async () => {
+      // ✅ 替换为你实际部署的后端地址
+      const API_BASE = 'https://timevote-backend.onrender.com';
+
+      try {
+        const res = await fetch(`${API_BASE}/api/events`);
+        const events = await res.json();
+
+        const list = document.getElementById('eventList');
+        if (!Array.isArray(events) || events.length === 0) {
+          list.innerHTML = '<li>No events found.</li>';
+          return;
+        }
+
+        events.forEach(e => {
+          const item = document.createElement('li');
+          item.innerHTML = `
+            <b>${e.title}</b> - ${e.description}<br>
+            <a href="result.html?id=${e._id}">📊 View Results</a>
+          `;
+          list.appendChild(item);
+        });
+      } catch (err) {
+        console.error('❌ Failed to load events:', err);
+        document.getElementById('eventList').innerHTML = '<li>Failed to load events. Please try again later.</li>';
+      }
+    });
+  </script>
+</body>
+</html>
